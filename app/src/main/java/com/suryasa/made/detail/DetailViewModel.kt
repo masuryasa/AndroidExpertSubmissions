@@ -3,9 +3,7 @@ package com.suryasa.made.detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.suryasa.made.core.data.MovieRepository
 import com.suryasa.made.core.data.Resource
-import com.suryasa.made.core.data.source.local.entity.MovieEntity
 import com.suryasa.made.core.domain.model.Movie
 import com.suryasa.made.core.domain.usecase.MovieUseCase
 

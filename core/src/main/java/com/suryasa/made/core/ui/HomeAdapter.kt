@@ -13,7 +13,6 @@ import com.suryasa.made.core.domain.model.Movie
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
     private var listMovies = ArrayList<Movie>()
     var onItemClick: ((Movie) -> Unit)? = null
-//    private var onItemClickCallback: OnItemClickCallback? = null
 
     fun setMovies(movies: List<Movie>?) {
         if (movies == null) return
@@ -21,10 +20,6 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
         this.listMovies.addAll(movies)
         notifyDataSetChanged()
     }
-
-//    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-//        this.onItemClickCallback = onItemClickCallback
-//    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int) =
             ListViewHolder(LayoutInflater.from(viewGroup.context).inflate(R.layout.items, viewGroup, false))
@@ -55,9 +50,4 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ListViewHolder>() {
             }
         }
     }
-
-//    interface OnItemClickCallback {
-//        fun onItemClicked(data: MovieEntity)
-//    }
-
 }
