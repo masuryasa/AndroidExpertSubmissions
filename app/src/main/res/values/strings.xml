@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MADE</string>
+
+    <string name="main_title">POPVIES</string>
+    <string name="favorite_title">Favorite</string>
+    <string name="menu_bookmark">Bookmark</string>
+    <string name="menu_title">Title</string>
+    <string name="title">Title</string>
+    <string name="overview">Overview</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="text_title">Title</string>
+    <string name="desc_overview">Description Overview Here</string>
+    <string name="movies">Movies</string>
+    <string name="tv_shows">TV Shows</string>
+    <string name="detail_movie">Detail Movie</string>
+    <string name="rating">Rating</string>
+    <string name="release">Release Date</string>
+    <string name="desc_release">Release Here</string>
+    <string name="rating_num">5</string>
+    <string name="message_undo">Batalkan menghapus item sebelumnya?</string>
+    <string name="message_ok">OK</string>
+    <string name="no_data">Empty Data</string>
+    <string name="title_favorite">Favorite</string>
+</resources>
