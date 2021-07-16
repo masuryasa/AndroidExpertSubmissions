@@ -1,7 +1,6 @@
 package com.suryasa.made.core.data.source.remote.network
 
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
 
 class ApiInterceptor: Interceptor {

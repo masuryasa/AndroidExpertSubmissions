@@ -14,7 +14,7 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.suryasa.made.favorite.FavoriteActivity"></activity>
+        <activity android:name="com.suryasa.made.favorite.FavoriteActivity" />
     </application>
 
 </manifest>
