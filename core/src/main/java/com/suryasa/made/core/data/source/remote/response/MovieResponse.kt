@@ -16,7 +16,7 @@ data class MovieResponse(
     val posterUrl: String,
 
     @field:SerializedName("release_date")
-    val release: String,
+    val releaseDate: String? = null,
 
     @field:SerializedName("vote_average")
     val rating: String

@@ -8,16 +8,21 @@ object DataMapper {
     fun mapResponsesToEntities(input: List<MovieResponse>): List<MovieEntity> {
         val movieList = ArrayList<MovieEntity>()
         input.map {
-            val movie = MovieEntity(
-                    id = it.id,
-                    title = it.title,
-                    overview = it.overview,
-                    posterUrl = it.posterUrl,
-                    release = it.release,
-                    rating = it.rating,
-                    favorite = false
-            )
-            movieList.add(movie)
+            val movie =
+                    it.releaseDate?.let { itRel ->
+                        MovieEntity(
+                                id = it.id,
+                                title = it.title,
+                                overview = it.overview,
+                                posterUrl = it.posterUrl,
+                                releaseDate = itRel,
+                                rating = it.rating,
+                                favorite = false
+                        )
+                    }
+            if (movie != null) {
+                movieList.add(movie)
+            }
         }
         return movieList
     }
@@ -29,7 +34,7 @@ object DataMapper {
                         title = it.title,
                         overview = it.overview,
                         posterUrl = it.posterUrl,
-                        release = it.release,
+                        releaseDate = it.releaseDate,
                         rating = it.rating,
                         favorite = it.favorite
                 )
@@ -41,7 +46,7 @@ object DataMapper {
                     title = input.title,
                     overview = input.overview,
                     posterUrl = input.posterUrl,
-                    release = input.release,
+                    releaseDate = input.releaseDate,
                     rating = input.rating,
                     favorite = input.favorite
             )
@@ -51,7 +56,7 @@ object DataMapper {
             title = input.title,
             overview = input.overview,
             posterUrl = input.posterUrl,
-            release = input.release,
+            releaseDate = input.releaseDate,
             rating = input.rating,
             favorite = input.favorite
     )

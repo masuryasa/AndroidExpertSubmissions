@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
         val dec =  DecimalFormat("#,##")
         contentBinding.ratingNum.text = movie.rating
         contentBinding.ratingBar.rating = dec.format(rate).toFloat()
-        contentBinding.release.text = movie.release
+        contentBinding.release.text = movie.releaseDate
         contentBinding.overview.text = movie.overview
 
         Glide.with(this)

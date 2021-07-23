@@ -20,5 +20,6 @@
     <string name="message_undo">Batalkan menghapus item sebelumnya?</string>
     <string name="message_ok">OK</string>
     <string name="no_data">Empty Data</string>
+    <string name="something_wrong">Ooops! Something went wrong!</string>
     <string name="title_favorite">Favorite</string>
 </resources>

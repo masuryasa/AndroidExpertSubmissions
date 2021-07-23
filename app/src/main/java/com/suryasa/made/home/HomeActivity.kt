@@ -2,7 +2,6 @@ package com.suryasa.made.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -36,7 +35,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         viewModel.movies.observe(this, { movies ->
-            Log.d("TAG", "dataaa: $movies")
             if (movies != null) {
                 when (movies) {
                     is Resource.Loading -> binding.progressbar.visibility = View.VISIBLE
@@ -46,7 +44,8 @@ class HomeActivity : AppCompatActivity() {
                     }
                     is Resource.Error -> {
                         binding.progressbar.visibility = View.GONE
-                        Toast.makeText(this, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        binding.viewError.root.visibility = View.VISIBLE
+                        binding.viewError.tvError.text = getString(R.string.something_wrong)
                     }
                 }
             }
@@ -80,6 +79,14 @@ class HomeActivity : AppCompatActivity() {
     private fun moveToFavoriteActivity() {
         startActivity(Intent(this, Class.forName("com.suryasa.made.favorite.FavoriteActivity")))
     }
+
+//    override fun onBackPressed() {
+//        if (isTaskRoot && supportFragmentManager.backStackEntryCount == 0) {
+//            finishAfterTransition()
+//        } else {
+//            super.onBackPressed()
+//        }
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

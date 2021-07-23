@@ -25,7 +25,12 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -55,6 +60,9 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+
+    implementation "net.zetetic:android-database-sqlcipher:$sqlcipherVersion"
+    implementation "androidx.sqlite:sqlite-ktx:$sqliteVersion"
 
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
 }
