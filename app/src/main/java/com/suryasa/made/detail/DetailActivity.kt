@@ -17,10 +17,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var contentBinding: ContentBinding
     private val viewModel: DetailViewModel by viewModel()
 
-    companion object {
-        const val EXTRA_DATA = "extra_data"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val activityDetailBinding = ActivityDetailBinding.inflate(layoutInflater)
@@ -79,5 +75,9 @@ class DetailActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    companion object {
+        const val EXTRA_DATA = "extra_data"
     }
 }

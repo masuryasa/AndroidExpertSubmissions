@@ -17,13 +17,13 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private val viewModel: HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding?.root)
 
         supportActionBar?.title = getString(R.string.main_title)
 
@@ -37,24 +37,24 @@ class HomeActivity : AppCompatActivity() {
         viewModel.movies.observe(this, { movies ->
             if (movies != null) {
                 when (movies) {
-                    is Resource.Loading -> binding.progressbar.visibility = View.VISIBLE
+                    is Resource.Loading -> binding?.progressbar?.visibility = View.VISIBLE
                     is Resource.Success -> {
-                        binding.progressbar.visibility = View.GONE
+                        binding?.progressbar?.visibility = View.GONE
                         adapter.setMovies(movies.data)
                     }
                     is Resource.Error -> {
-                        binding.progressbar.visibility = View.GONE
-                        binding.viewError.root.visibility = View.VISIBLE
-                        binding.viewError.tvError.text = getString(R.string.something_wrong)
+                        binding?.progressbar?.visibility = View.GONE
+                        binding?.viewError?.root?.visibility = View.VISIBLE
+                        binding?.viewError?.tvError?.text = getString(R.string.something_wrong)
                     }
                 }
             }
         })
 
-        with(binding.rvMovie) {
-            this.layoutManager = LinearLayoutManager(context)
-            this.setHasFixedSize(true)
-            this.adapter = adapter
+        with(binding?.rvMovie) {
+            this?.layoutManager = LinearLayoutManager(this?.context)
+            this?.setHasFixedSize(true)
+            this?.adapter = adapter
         }
     }
 
@@ -79,14 +79,6 @@ class HomeActivity : AppCompatActivity() {
     private fun moveToFavoriteActivity() {
         startActivity(Intent(this, Class.forName("com.suryasa.made.favorite.FavoriteActivity")))
     }
-
-//    override fun onBackPressed() {
-//        if (isTaskRoot && supportFragmentManager.backStackEntryCount == 0) {
-//            finishAfterTransition()
-//        } else {
-//            super.onBackPressed()
-//        }
-//    }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -2,4 +2,5 @@
 <resources>
     <string name="title">Title</string>
     <string name="overview">Overview</string>
+    <string name="poster_image">Poster Image</string>
 </resources>

@@ -13,14 +13,14 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class FavoriteActivity : AppCompatActivity() {
     private var _binding: ActivityFavoriteBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
     private val viewModel: FavoriteViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         _binding = ActivityFavoriteBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding?.root)
 
         supportActionBar?.title = getString(R.string.favorite_title)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -33,7 +33,7 @@ class FavoriteActivity : AppCompatActivity() {
         }
 
         viewModel.favoriteMovies.observe(this, { movies ->
-            val emptyView: View = binding.dataEmpty as View
+            val emptyView: View = binding?.dataEmpty as View
 
             if (movies != null) {
                 adapter.setMovies(movies)
@@ -41,10 +41,10 @@ class FavoriteActivity : AppCompatActivity() {
             emptyView.visibility = if (movies.isNotEmpty()) View.GONE else View.VISIBLE
         })
 
-        with(binding.rvFavorite) {
-            this.layoutManager = LinearLayoutManager(this.context)
-            this.setHasFixedSize(true)
-            this.adapter = adapter
+        with(binding?.rvFavorite) {
+            this?.layoutManager = LinearLayoutManager(this?.context)
+            this?.setHasFixedSize(true)
+            this?.adapter = adapter
         }
     }
 

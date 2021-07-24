@@ -40,6 +40,7 @@ val networkModule = module {
             .add(hostname, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
             .add(hostname, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
             .build()
+
         OkHttpClient.Builder().apply {
             addInterceptor(ApiInterceptor())
         }

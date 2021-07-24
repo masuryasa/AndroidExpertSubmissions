@@ -10,8 +10,8 @@
     <string name="title_activity_detail">DetailActivity</string>
     <string name="text_title">Title</string>
     <string name="desc_overview">Description Overview Here</string>
+    <string name="poster_image">Poster Image</string>
     <string name="movies">Movies</string>
-    <string name="tv_shows">TV Shows</string>
     <string name="detail_movie">Detail Movie</string>
     <string name="rating">Rating</string>
     <string name="release">Release Date</string>
